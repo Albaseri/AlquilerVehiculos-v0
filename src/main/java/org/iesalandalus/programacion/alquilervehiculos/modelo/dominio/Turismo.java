@@ -46,13 +46,13 @@ public class Turismo {
 	public String getModelo() {
 		return modelo;
 	}
-
+ 
 	private void setModelo(String modelo) {
 		if (modelo == null) {
 			throw new NullPointerException("ERROR: El modelo no puede ser nulo.");
 		}
-		//trim() elimina los espacios en blanco al principio y al final de la cadena, 
-		if (modelo.trim().isEmpty()) { //modelo.trim().isEmpty() devuelve true si la cadena está en blanco después de haber eliminado los espacios en blanco
+		//trim() elimina los espacios en blanco al principio y al final de la cadena. Si modelo solo contiene espacios en blanco, "modelo.trim()" devuelve una cadena vacía.
+		if (modelo.trim().equals("")) { //Equals("")" comprueba si la cadena resultante es igual a una cadena vacía.
 			throw new IllegalArgumentException("ERROR: El modelo no puede estar en blanco.");
 		}
 		this.modelo = modelo; //se establece el valor del atributo modelo si las comprobaciones no fallan.
@@ -84,10 +84,10 @@ public class Turismo {
 	}
 
 	public static Turismo getTurismoConMatricula(String matricula) {
-		Turismo turismo = new Turismo("Land", "Rover", 150, matricula);
+		Turismo turismo = new Turismo("Toyota", "Yaris", 160, matricula);
 		return turismo;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(matricula);

@@ -1,9 +1,6 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
-import java.util.Iterator;
 import java.util.Objects;
-
-import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Cliente {
 	private static final String ER_NOMBRE = "[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*( [A-ZÁÉÍÓÚÑ][a-záéíóúñ]*)*";
@@ -28,10 +25,8 @@ public class Cliente {
 		setNombre(cliente.getNombre());
 		setTelefono(cliente.getTelefono());
 		setDni(cliente.getDni());
-		/*
-		 * nombre = cliente.getNombre(); telefono = cliente.getTelefono(); dni =
-		 * cliente.getDni();
-		 */
+		/* nombre = cliente.getNombre(); telefono = cliente.getTelefono(); 
+		dni = cliente.getDni();		 */
 	}
 
 //métodos getters and setters con excepciones
@@ -85,11 +80,10 @@ public class Cliente {
 			throw new IllegalArgumentException("ERROR: El teléfono no tiene un formato válido.");
 		}
 		this.telefono = telefono;
-	}
+	} 
 
 	// método de clase
 	public static Cliente getClienteConDni(String dni) {
-
 		Cliente cliente = new Cliente("Isabel", dni, "653412531");
 		return cliente;
 	}
@@ -116,7 +110,7 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return String.format("%s - %s (%s)", nombre, dni, telefono);
-	}
+	} 
 
 	/*
 	 * método main public static void main(String[] args) { Cliente alba = new

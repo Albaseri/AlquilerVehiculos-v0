@@ -79,7 +79,7 @@ public class Alquiler {
 		return fechaDevolucion;
 	}
 
-	public void setFechaDevolucion(LocalDate fechaDevolucion) {
+	private void setFechaDevolucion(LocalDate fechaDevolucion) {
 		if (fechaDevolucion == null) {
 			throw new NullPointerException("ERROR: La fecha de devolución no puede ser nula.");
 		}

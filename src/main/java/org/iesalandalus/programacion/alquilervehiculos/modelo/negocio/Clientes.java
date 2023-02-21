@@ -8,25 +8,25 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 
 public class Clientes {
-	private List<Cliente> coleccionClientes;
+	public List<Cliente> coleccionClientes;
 
 	// constructor por defecto
 	public Clientes() {
 		coleccionClientes = new ArrayList<>();
 	}
 
-	//método get
+	// método get
 	public List<Cliente> get() {
 		return coleccionClientes;
 	}
 
-//método getCantidad
+	// método getCantidad
 	public int getCantidad() {
 		int cantidadClientes = 0;
 		for (Cliente coleccionCliente : coleccionClientes) {
 			cantidadClientes++;
 		}
-		return cantidadClientes;
+		return cantidadClientes;  //se podría hacer directamente con return coleccionClientes.size(), así se optimiza código
 	}
 
 	public void insertar(Cliente cliente) throws OperationNotSupportedException {
@@ -44,8 +44,7 @@ public class Clientes {
 		if (cliente == null) {
 			throw new NullPointerException("ERROR: No se puede buscar un cliente nulo.");
 		}
-		if (coleccionClientes.contains(cliente)) {
-		} else {
+		if (!coleccionClientes.contains(cliente)) {
 			cliente = null;
 		}
 		return cliente;
